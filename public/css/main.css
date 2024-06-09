@@ -1,0 +1,19 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	grid-template-rows: masonry;
+	gap: 8px;
+}
+
+.grid img {
+	width: 100%;
+}
+
+
+.search input {
+	padding: 10px;
+}
+
+.pagination-form {
+	display: none;
+}

@@ -1,0 +1,28 @@
+<div class="grid">
+	{{range .Urls}}
+	<a href="{{.Direct}}" target="_blank">
+		<img src="{{.Direct}}" alt="">
+	</a>
+	{{end}}
+</div>
+
+<form class="pagination-form" hx-post="/getPhotos" hx-trigger="revealed" hx-swap="afterend">
+	<label for="website">
+		stronka
+		<input type="text" name="website" value="{{.FormNext.Website}}">
+	</label>
+
+
+	<label for="limit">
+		limit
+		<input type="number" name="limit" value="{{.FormNext.Limit}}">
+	</label>
+
+	<select multiple name="mimetype">
+		{{range .FormNext.Mimetype}}
+		<option selected value="{{.}}">{{.}}</option>
+		{{end}}
+	</select>
+
+	<input type="hidden" name="resumeKey" value="{{.FormNext.ResumeKey}}">
+</form>
